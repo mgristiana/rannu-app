@@ -176,3 +176,72 @@ body{font-size:15px;background:var(--paper)}
  .toast{font-size:12px;bottom:calc(82px + env(safe-area-inset-bottom))}
 }
 @media(max-width:390px){.main-area{padding-left:12px;padding-right:12px}.page-head h1{font-size:24px}.page-head>.btn{font-size:11px;padding:10px}.menu-card-title{font-size:13px}.menu-photo{height:120px}.menu-card .more-btn{top:82px}.row-chip{display:none}.menu-row{grid-template-columns:minmax(0,1fr) 36px}.chart-x-label{font-size:10px}}
+
+/* RANNU warm, consistent interface */
+:root{--yellow:#facc15;--amber:#e6a83e;--brown:#342a20;--warm-line:#e5d8bb;--cream:#fffdf6}
+.mobile-brand{display:none}
+*,*::before,*::after{font-family:Inter,"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:#76550a}
+:focus{outline-color:#bd8d12}
+:focus:not(:focus-visible){outline:none}
+:focus-visible{outline:2px solid #bd8d12!important;outline-offset:2px;box-shadow:none!important}
+.btn{background:#facc15!important;color:#342a20!important;border:1px solid #facc15!important;font-weight:750!important}
+.btn.ghost,.btn.secondary{background:#fffdf6!important;color:#493c2e!important;border:1px solid #d9c79f!important;font-weight:700!important}
+.btn.danger{background:#fff2ed!important;color:#a44935!important;border-color:#efc4b8!important}
+.input:focus,.select:focus,textarea:focus{border-color:#c49717!important;box-shadow:0 0 0 3px #fff0ba!important;outline:none!important}
+.today-panel{background:#fffaf0!important;border:1px solid #efd98b!important;color:#342a20!important}
+.today-panel:after{color:rgba(229,174,39,.10)!important}
+.today-panel .panel-title{color:#342a20!important}
+.today-panel .panel-sub,.today-footer{color:#76634a!important}
+.today-date{background:#fff0bd!important;color:#694d0b!important;font-weight:700}
+.today-pick{background:#fff!important;border-color:#f0dfa7!important;color:#342a20!important}
+.today-pick small{color:#836d46!important}
+.today-pick strong{color:#342a20!important}
+.today-panel .empty-state{color:#76634a!important}
+.menu-photo{position:relative}
+.menu-card .more-btn{position:absolute!important;top:10px!important;right:10px!important;width:36px;height:36px;border:1px solid rgba(255,255,255,.65);border-radius:50%!important;background:rgba(255,253,246,.88)!important;color:#493c2e!important;backdrop-filter:blur(8px);z-index:2}
+.menu-card .menu-action-popover{z-index:5}
+.photo-placeholder{color:#c49d40!important;background:linear-gradient(145deg,#fff9e8,#f5e9c7)!important}
+.input,.select,textarea{border-radius:16px!important}
+.check-option input{width:20px!important;height:20px!important;min-width:20px;accent-color:#c49605;flex:none;cursor:pointer}
+.upload-box{color:#544632!important;border-color:#d7bd72!important}
+.upload-box .hint,.field>.hint,.hint{color:#71634d!important}
+.upload-prompt{font-weight:700;color:#463925}
+.form-actions .btn.ghost{background:transparent!important;color:#493c2e!important;border:1px solid #cdbb99!important}
+.setting-actions-list{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:9px!important;max-width:460px}
+.setting-actions-list .btn{width:100%;min-height:46px;text-align:left;justify-content:flex-start}
+.nutrition-note a{color:#76550a!important;text-decoration:underline!important;text-underline-offset:3px;font-weight:700}
+.schedule-week-nav{display:flex;align-items:center;gap:7px;padding:4px;border:1px solid #eee1c4;border-radius:999px;background:#fff9ea}
+.schedule-week-nav .btn{min-height:40px;border-radius:999px!important;padding:8px 14px!important;background:transparent!important;border-color:transparent!important}
+.schedule-week-nav .btn[data-week="0"]{background:#facc15!important;border-color:#facc15!important}
+.schedule-tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 12px;scrollbar-width:none}
+.schedule-tabs::-webkit-scrollbar{display:none}
+.schedule-tab{display:flex;flex:1 0 60px;max-width:90px;flex-direction:column;align-items:center;gap:2px;padding:9px 8px;border:1px solid #e8ddc4;border-radius:16px;background:#fff;color:#564831;cursor:pointer}
+.schedule-tab small{font-size:12px;color:#8a795c}
+.schedule-tab b{font-size:17px}
+.schedule-tab.active{background:#fff2c5;border-color:#ddb940;color:#493507;box-shadow:0 2px 8px rgba(128,95,18,.10)}
+.schedule-tab.is-today{border-color:#d6aa27}
+.schedule-grid{grid-template-columns:minmax(0,1fr)!important}
+.schedule-day{max-width:680px;width:100%;margin:0 auto;padding:18px!important}
+.schedule-day .day-heading{margin-bottom:14px}
+.schedule-day .schedule-item{min-height:64px}
+.schedule-tip{color:#76664c}
+.chart-empty{min-height:245px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;text-align:center;color:#76664c;padding:20px}
+.empty-plate{width:76px;height:76px;display:grid;place-items:center;border-radius:50%;background:#fff5d8;color:#c49717;margin-bottom:5px}
+.chart-empty strong{font-size:17px;color:#4c3a20}
+.chart-empty span{font-size:14px;max-width:300px;line-height:1.5}
+.donut-chart{display:flex;align-items:center;justify-content:center;gap:clamp(24px,8vw,90px);padding:18px 10px 8px}
+.donut-chart>svg{width:min(220px,48%);overflow:visible;flex:none}
+.donut-total{font-size:25px;font-weight:800;fill:#3c3022}
+.donut-label{font-size:10px;fill:#8b795b}
+.donut-legend{display:grid;gap:12px;min-width:min(260px,48%)}
+.donut-legend-row{display:grid;grid-template-columns:12px 1fr auto;align-items:center;gap:9px;color:#64543b;font-size:14px}
+.donut-legend-row b{color:#392e21;font-size:14px}
+.donut-key{width:11px;height:11px;border-radius:50%;background:var(--key)}
+@media(max-width:760px){
+ .breadcrumb-path{display:none!important}.breadcrumb{display:block!important}.today-label{display:block!important;font-size:14px!important;font-weight:700!important;color:#453821!important}.mobile-brand{display:flex!important;width:43px;height:43px;align-items:center;justify-content:center}.mobile-brand img{width:42px;height:42px;object-fit:contain;border-radius:12px}.avatar{display:none!important}
+ .page-head>.btn{font-size:14px!important;padding:12px 15px!important;gap:7px}
+ .donut-chart{gap:14px;padding:12px 0}.donut-chart>svg{width:44%;max-width:180px}.donut-legend{min-width:0;flex:1;gap:10px}.donut-legend-row{font-size:12px;gap:6px}.donut-legend-row b{font-size:12px}
+ .schedule-toolbar{align-items:center;gap:10px}.schedule-week-nav .btn{font-size:12px!important;padding:7px 11px!important}.schedule-tab{flex-basis:52px;padding:8px 6px}.schedule-tab small{font-size:11px}.schedule-day{padding:14px!important}
+}
