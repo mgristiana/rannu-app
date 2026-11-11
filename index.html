@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f7f2"><meta name="description" content="Rencanakan menu masakan mingguan dengan mudah.">
+  <link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="icon-180.png">
+  <title>Dapur Minggu</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="#home"><span class="brand-mark">✳</span><span>Dapur<span class="brand-light">Minggu</span></span></a>
+    <div class="side-caption">MENU UTAMA</div>
+    <nav class="side-nav" aria-label="Menu utama">
+      <button data-page="home" class="nav-item active"><span class="nav-icon">⌂</span>Beranda</button>
+      <button data-page="menus" class="nav-item"><span class="nav-icon">▦</span>Daftar menu <span class="nav-count" id="menuCount">0</span></button>
+      <button data-page="add" class="nav-item"><span class="nav-icon plus-icon">＋</span>Tambah menu</button>
+      <button data-page="schedule" class="nav-item"><span class="nav-icon">▤</span>Jadwal</button>
+    </nav>
+    <div class="side-bottom"><div class="sync-card"><span class="sync-dot"></span><div><strong>Mode perangkat</strong><small>Data tersimpan di sini</small></div></div><button data-page="settings" class="nav-item"><span class="nav-icon">⚙</span>Pengaturan</button></div>
+  </aside>
+  <main class="main-area">
+    <header class="topbar"><div class="breadcrumb">Ruang dapur <span>/</span> <b id="crumb">Beranda</b></div><div class="top-right"><span id="todayLabel" class="today-label"></span><button class="avatar" title="Pengaturan" data-page="settings">D</button></div></header>
+    <section id="page-home" class="page active"></section>
+    <section id="page-menus" class="page"></section>
+    <section id="page-add" class="page"></section>
+    <section id="page-schedule" class="page"></section>
+    <section id="page-settings" class="page"></section>
+  </main>
+</div>
+<nav class="mobile-nav" aria-label="Navigasi bawah">
+  <button data-page="home" class="mobile-item active"><span>⌂</span>Home</button><button data-page="menus" class="mobile-item"><span>▦</span>Menu</button><button data-page="add" class="mobile-item mobile-add"><span>＋</span><small>Tambah</small></button><button data-page="schedule" class="mobile-item"><span>▤</span>Schedule</button><button data-page="settings" class="mobile-item"><span>⚙</span>Settings</button>
+</nav>
+<div id="modalRoot"></div><div id="toast" class="toast" role="status"></div>
+<script src="app.js"></script>
+</body></html>
