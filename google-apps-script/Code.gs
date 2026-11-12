@@ -16,8 +16,33 @@ function setup() {
 
 function doGet(e) {
   const action = (e && e.parameter && e.parameter.action) || 'data';
+  if (action === 'image') return output_(readImage_(e.parameter.id), e);
   if (action !== 'data') return output_({ ok: true, message: 'Dapur Minggu API siap.' }, e);
   return output_(readData_(), e);
+}
+
+// Serve image bytes through this Web App so browsers do not depend on Drive's
+// legacy uc?export=view URLs, which are no longer reliable for embedded images.
+function readImage_(id) {
+  if (!id || !/^[A-Za-z0-9_-]+$/.test(id)) return { ok: false, id: id || '', error: 'Invalid image ID.' };
+  try {
+    const file = DriveApp.getFileById(id);
+    const parents = file.getParents();
+    let belongsToImageFolder = false;
+    while (parents.hasNext()) {
+      if (parents.next().getId() === DRIVE_FOLDER_ID) belongsToImageFolder = true;
+    }
+    if (!belongsToImageFolder) return { ok: false, id: id, error: 'Image is outside the RANNU folder.' };
+    const blob = file.getBlob();
+    const mimeType = blob.getContentType() || '';
+    const bytes = blob.getBytes();
+    if (!mimeType.startsWith('image/') || bytes.length > 5 * 1024 * 1024) {
+      return { ok: false, id: id, error: 'Unsupported image.' };
+    }
+    return { ok: true, id: id, mimeType: mimeType, base64: Utilities.base64Encode(bytes) };
+  } catch (err) {
+    return { ok: false, id: id, error: 'Image could not be read.' };
+  }
 }
 
 function doPost(e) {
