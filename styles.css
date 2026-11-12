@@ -349,3 +349,4 @@ a{color:#76550a}
  .row-groups-icons{justify-content:flex-start}
 }
 @media(prefers-reduced-motion:reduce){.donut-ring,.schedule-item strong.is-rolling{animation:none!important}.stat-value[data-count-target]{transition:none!important}}
+.detail-desc{white-space:pre-wrap;overflow-wrap:anywhere}
